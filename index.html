@@ -16,43 +16,47 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <section class="container">
-      <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <div class="panel-title">Faça seu login</div>
-            <div class="lost-password"><a href="#">Esqueceu sua senha?</a></div>
-          </div>
-          <div class="panel-body">
-            <div id="login-alert" col-sm-12"></div>
-              <div id="loginform" class="form-horizontal">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                  <input id="emailInput" type="email" class="form-control" name="email" placeholder="e-mail"> 
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                  <input id="passwordInput" type="password" class="form-control" name="password" placeholder="password">
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-12 control">
-                    <button id="signInBtn" type="button" class="btn-login">login</button>
-                    <button id="loginGoogle" type="button"><i class="fab fa-google"></i></button>
-                    <button id="loginFacebook" type="button"><i class="fab fa-facebook-f"></i></button>
+    <section class="container-fluid modal-dialog-centered justify-content-center">
+      <div class="row justify-content-center">
+        <div id="loginbox" class="">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <div class="panel-title">Faça seu login</div>
+              <div class="lost-password"><a href="#">Esqueceu sua senha?</a></div>
+            </div>
+            <div class="panel-body">
+              <div id="login-alert col-sm-12"></div>
+                <div id="loginform" class="form-horizontal">
+                  <div class="input-group">
+                    <span class="input-group-addon align-self-center"><i class="far fa-user"></i></span>
+                    <input id="login-input" type="email" class="form-control" name="email" placeholder="e-mail"> 
                   </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-12 control">
-                    <div class="control-sub">
-                      Você não possui uma conta?
-                      <a href="register.html">
-                        Registre-se aqui!
-                      </a>
+                  <div class="input-group">
+                    <span class="input-group-addon align-self-center"><i class="fas fa-lock"></i></span>
+                    <input id="password-input" type="password" class="form-control" name="password" placeholder="password">
+                  </div>
+                  <div class="form-group">
+                    <div class="row control h-100">
+                      <div class="col-sm-12 align-self-end">
+                        <button id="signInBtn" type="button" class="btn-login">login</button>
+                        <button id="loginGoogle" type="button"><i class="fab fa-google"></i></button>
+                        <button id="loginFacebook" type="button"><i class="fab fa-facebook-f"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12 control">
+                      <div class="control-sub">
+                        Você não possui uma conta?
+                        <a href="register.html">
+                          Registre-se aqui!
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,44 +1,32 @@
-.mainbox {
+/* .mainbox {
     margin-top: 50px;
-}
+} */
 
 .lost-password {
     float: right; 
     font-size: 80%; 
     position: relative; 
-    top:-10px;
+    top: -1.5vh;
 }
 
-.panel-body {
-    padding-top:30px
-}
-
-.alert {
-    display: none;
+.panel-title {
+    margin-bottom: 4vh;
 }
 
 .input-group {
-    margin-bottom: 25px;
+    margin-bottom: 5vh;
+}
+
+.input-group-addon {
+    margin-right: 0.5vw;
 }
 
 .form-group {
-    margin-top:10px;
+    margin-bottom: 5vh;
 }
 
 .control-sub {
     border-top: 1px solid#888; 
-    padding-top:15px; 
-    font-size:85%;
-}
-
-.mainbox2 {
-    display:none; 
-    margin-top:50px
-}
-
-.title-sub {
-    float:right; 
-    font-size: 85%; 
-    position: relative; 
-    top:-10px
+    padding-top: 2vh; 
+    font-size: 85%;
 }
