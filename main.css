@@ -1,0 +1,44 @@
+.mainbox {
+    margin-top: 50px;
+}
+
+.lost-password {
+    float: right; 
+    font-size: 80%; 
+    position: relative; 
+    top:-10px;
+}
+
+.panel-body {
+    padding-top:30px
+}
+
+.alert {
+    display: none;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-top:10px;
+}
+
+.control-sub {
+    border-top: 1px solid#888; 
+    padding-top:15px; 
+    font-size:85%;
+}
+
+.mainbox2 {
+    display:none; 
+    margin-top:50px
+}
+
+.title-sub {
+    float:right; 
+    font-size: 85%; 
+    position: relative; 
+    top:-10px
+}
