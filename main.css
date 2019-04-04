@@ -1,32 +1,55 @@
-/* .mainbox {
-    margin-top: 50px;
-} */
+.centering {
+    width: 100vw;
+    height: 100vh;
+}
 
 .lost-password {
     float: right; 
     font-size: 80%; 
     position: relative; 
-    top: -1.5vh;
+    padding-bottom: 0.4em;
+}
+
+.panel-body {
+    padding-top: 3vh;
 }
 
 .panel-title {
-    margin-bottom: 4vh;
+    margin-top: 2vh;
+    margin-bottom: 0.3vh;
+}
+
+.title-login {
+
+}
+
+.title-signup {
+
 }
 
 .input-group {
-    margin-bottom: 5vh;
-}
-
-.input-group-addon {
-    margin-right: 0.5vw;
+    margin-bottom: 4vh;
 }
 
 .form-group {
-    margin-bottom: 5vh;
+    margin-bottom: 4vh;
 }
 
 .control-sub {
     border-top: 1px solid#888; 
-    padding-top: 2vh; 
+    padding-top: 15px; 
     font-size: 85%;
+}
+
+.title-sub {
+    float:right; 
+    font-size: 85%; 
+    position: relative; 
+    top:-10px
+}
+
+.palommers-posts {
+    word-break: break-all;
+    width: 30vw;
+    margin: 5vh 2vw 5vw 2vw;
 }

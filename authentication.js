@@ -5,7 +5,7 @@ const usersRef = database.ref('users');
 $(document).ready(function(){
   
   $("#signInBtn").click(function() {
-    let email = $("#login-input").val();
+    let email = $("#email-input").val();
     let password = $("#password-input").val();
 
     auth.signInWithEmailAndPassword(email, password)
@@ -21,7 +21,7 @@ $(document).ready(function(){
         // ...
       });
   });
-
+  
 
   $("#loginGoogle").click(function(e) {
     e.preventDefault();
