@@ -20,9 +20,12 @@ $(document).ready(function(){
     let email = $("#emailInput").val();
     let password = $("#passwordInput").val();
 
+    register(email, password, name, lastname, username);
+
     auth.createUserWithEmailAndPassword(email, password)
       .then(function() {
         // se deu certo
+        window.location = "home.html";
         })
       .catch(function(error){
         // se deu tudo errado
@@ -52,20 +55,14 @@ $(document).ready(function(){
       return;
     }
 
-    register(email, password, name, lastname, username);
-
-    window.location = "home.html";
-
   });
 
 
   auth.onAuthStateChanged(function(user) {
+    let user = auth.currentUser;
+
     if (user) {
       // User is signed in
-
-      let user = auth.currentUser;
-
-      if (user != null) {
         name = user.name;
         displayName = user.displayName;
         lastname = user.lastname;
@@ -74,7 +71,6 @@ $(document).ready(function(){
         password = user.password;
         emailVerified = user.emailVerified;
         uid = user.uid;
-      }
     } else {
       // No user is signed in
     }

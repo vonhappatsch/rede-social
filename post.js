@@ -1,4 +1,3 @@
-let database = firebase.database();
 let USER_ID = window.location.search.match(/\?userId=(.*)/[1]);
 
 $(document).ready(function(){ 
