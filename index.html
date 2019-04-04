@@ -15,44 +15,46 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
   </head>
-  <body>
-    <section class="container">
-      <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <div class="panel-title">Faça seu login</div>
-            <div class="lost-password"><a href="#">Esqueceu sua senha?</a></div>
-          </div>
-          <div class="panel-body">
-            <div id="login-alert" col-sm-12"></div>
-              <div id="loginform" class="form-horizontal">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                  <input id="emailInput" type="email" class="form-control" name="email" placeholder="e-mail"> 
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                  <input id="passwordInput" type="password" class="form-control" name="password" placeholder="password">
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-12 control">
-                    <button id="signInBtn" type="button" class="btn-login">login</button>
-                    <button id="loginGoogle" type="button"><i class="fab fa-google"></i></button>
-                    <button id="loginFacebook" type="button"><i class="fab fa-facebook-f"></i></button>
+  <body class="centering">
+    <section class="container h-100">
+      <div class="row h-100 justify-content-center">
+        <div id="loginbox" class="col-md-6 col-sm-8 align-self-center">
+          <div class="panel">
+            <div class="panel-heading">
+              <div class="panel-title title-login">Faça seu login</div>
+              <div class="lost-password"><a href="#">Esqueceu sua senha?</a></div>
+            </div>
+            <div class="panel-body">
+              <div id="login-alert col-sm-12"></div>
+                <div id="loginform" class="form-horizontal">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input id="email-input" type="email" class="form-control" name="email" placeholder="e-mail"> 
                   </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-12 control">
-                    <div class="control-sub">
-                      Você não possui uma conta?
-                      <a href="register.html">
-                        Registre-se aqui!
-                      </a>
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="password-onput" type="password" class="form-control" name="password" placeholder="password">
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12 control">
+                      <button id="signInBtn" type="button" class="btn-login btn btn-outline-dark">login</button>
+                      <button id="loginGoogle" type="button" class="btn btn-outline-dark"><i class="fab fa-google"></i></button>
+                      <button id="loginFacebook" type="button" class="btn btn-outline-dark"><i class="fab fa-facebook-f"></i></button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12 control">
+                      <div class="control-sub">
+                        Você não possui uma conta?
+                        <a href="register.html">
+                          Registre-se aqui!
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -5,8 +5,8 @@ const usersRef = database.ref('users');
 $(document).ready(function(){
   
   $("#signInBtn").click(function() {
-    let email = $("#emailInput").val();
-    let password = $("#passwordInput").val();
+    let email = $("#email-input").val();
+    let password = $("#password-input").val();
 
     auth.signInWithEmailAndPassword(email, password)
       .then(function() {
