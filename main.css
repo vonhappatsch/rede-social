@@ -3,11 +3,14 @@
     height: 100vh;
 }
 
+.mainbox {
+    background-color: blanchedalmond;
+}
+
 .lost-password {
     float: right; 
     font-size: 80%; 
     position: relative; 
-    padding-bottom: 0.4em;
 }
 
 .panel-body {
@@ -20,15 +23,32 @@
 }
 
 .title-login {
-
+    font-size: 1.5em;
 }
 
 .title-signup {
-
+    font-size: 1.5em;
 }
 
 .input-group {
-    margin-bottom: 4vh;
+    margin-top: 1.3vh;
+}
+
+.control {
+    margin-top: 3.5vh;
+}
+
+.btn-login {
+    display: block;
+    align-self: flex-end;
+}
+
+.btn-gg {
+
+}
+
+.btn-fb {
+
 }
 
 .form-group {
