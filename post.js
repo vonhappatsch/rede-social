@@ -41,11 +41,13 @@ $(document).ready(function(){
 
 function createPost(text, key){
   $(".post-list").append(`
-  <li>
-    <span data-text-id="${key}">${text}</span>
-      <button data-edit-id="${key}">Editar</button>
-      <button data-delete-id="${key}">Deletar</button>
-  <li>
+  <div class="posts">
+    <p data-text-id="${key}" class="palommers-post">${text}</p>
+  </div>
+  <div class="post-btns">
+    <button data-edit-id="${key}" class="edit-post btn btn-sm btn-outline-dark">Editar</button>
+    <button data-delete-id="${key}" class="delete-post btn btn-sm btn-outline-danger">Deletar</button>
+  <div>
   `);
 
   $(`button[data-delete-id=${key}]`).click(function(){

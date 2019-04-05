@@ -5,6 +5,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     let newPost = $(".palommers-posts-input").val();
+    $(".palommers-posts-input").val("");
 
     postsRef.push({
       text: newPost
