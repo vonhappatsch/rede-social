@@ -9,9 +9,9 @@ $(document).ready(function(){
     let password = $("#password-input").val();
 
     auth.signInWithEmailAndPassword(email, password)
-      .then(function() {
+      .then(function(result) {
         // se deu certo
-        window.location = "home.html";
+        window.location = `home.html?userId=${result.user.uid}`;
       })
 
       .catch(function(error) {
@@ -33,7 +33,7 @@ $(document).ready(function(){
       let token = result.credential.accessToken;
       // The signed-in user info.
       let user = result.user;
-        window.location = "home.html";
+        window.location = `home.html?userId=${result.user.uid}`;
       }).catch(function(error) {
         console.log(error)
         // Handle Errors here.
@@ -57,7 +57,7 @@ $(document).ready(function(){
       let token = result.credential.accessToken;
       // The signed-in user info.
       let user = result.user;
-          window.location = "home.html";
+          window.location = `home.html?userId=${result.user.uid}`;
       }).catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;

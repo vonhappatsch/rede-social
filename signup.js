@@ -4,14 +4,14 @@ const usersRef = database.ref('users');
 const user = auth.currentUser;
 
 $(document).ready(function(){
-  const register = (email, password, name, lastname, username) => {
-    usersRef.push({
-        email,
+  const register = (email, password, name, lastname, username, id) => {
+    database.ref(`users/${id}`).set({
+      email,
         password,
         name,
         lastname,
         username
-    });
+    })
   }
 
   $("#signUpBtn").click(function() {
@@ -21,12 +21,11 @@ $(document).ready(function(){
     let email = $("#emailInput").val();
     let password = $("#passwordInput").val();
 
-    register(email, password, name, lastname, username);
-
     auth.createUserWithEmailAndPassword(email, password)
-      .then(function() {
+      .then(function(res) {
         // se deu certo
-        window.location = "home.html";
+        register(email, password, name, lastname, username, res.user.uid);
+        window.location = `home.html?userId=${res.user.uid}`;
         })
       .catch(function(error){
         // se deu tudo errado
