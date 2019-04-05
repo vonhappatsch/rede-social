@@ -33,21 +33,25 @@ $(document).ready(function(){
     let text = $(".post-input").val();
     $(".post-input").val("");
 
-    database.ref("users/" + USER_ID).once("value")
+    let res = confirm("Você deseja mesmo postar?");
+
+    if (res) {
+      database.ref("users/" + USER_ID).once("value")
       .then(function(snapshot){
         let userInfo = snapshot.val();
         let newPostInDb = database.ref(`posts/` + USER_ID).push({
           text: text
         });
         managePost(text, newPostInDb.key, userInfo.name);
-    });
+      });
+    }
   });
 
 
   function managePost(text, key, name){
     $(".post-list").append(`
     <div>
-      <p>${name}</p>
+      <p class="userInfo">${name}</p> 
       <div class="posts">
         <p data-text-id="${key}" class="palommers-post">${text}</p>
       </div>
