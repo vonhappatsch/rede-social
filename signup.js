@@ -1,6 +1,7 @@
 const database = firebase.database();
 const auth = firebase.auth();
 const usersRef = database.ref('users');
+const user = auth.currentUser;
 
 $(document).ready(function(){
   const register = (email, password, name, lastname, username) => {
@@ -59,8 +60,6 @@ $(document).ready(function(){
 
 
   auth.onAuthStateChanged(function(user) {
-    let user = auth.currentUser;
-
     if (user) {
       // User is signed in
         name = user.name;

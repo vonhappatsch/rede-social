@@ -5,6 +5,7 @@
 
 .mainbox {
     background-color: blanchedalmond;
+    padding: 2vh 2.5vw 2vh 2.5vw;
 }
 
 .lost-password {
@@ -35,33 +36,32 @@
 }
 
 .control {
-    margin-top: 3.5vh;
+    margin-top: 0.5vh;
 }
 
-.btn-login {
-    display: block;
-    align-self: flex-end;
+.btns {
+    margin-top: 3vh;
 }
 
-.btn-gg {
-
+.btn-align {
+    margin-top: 1vh;
 }
 
-.btn-fb {
-
+.login-choice {
+    font-size: 65%;
 }
 
 .input-group-addon {
-    
+    margin-right: 0.8vw;
 }
 
 .form-group {
-    margin-bottom: 4vh;
+    margin-bottom: 3vh;
 }
 
 .control-sub {
     border-top: 1px solid#888; 
-    padding-top: 15px; 
+    padding-top: 1vh; 
     font-size: 85%;
 }
 
