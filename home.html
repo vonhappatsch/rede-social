@@ -20,11 +20,17 @@
     <br>
     <section class="container-fluid">
       <div class="row">
-        <div class="col-sm-12 col-md-8 form-group">
+        <div class="col-sm-12">
           <input type="text" class="post-input form-control-lg" />
-          <button class="send-button btn btn-outline-dark">Enviar</button>
-          <button id="logoutBtn" class="btn btn-outline-dark">logout</button>
-          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="col-sm-12 col-md-6 d-flex justify-content-end post-opts">
+            <input type="radio" value="public" name="post-check" id="public-posts" class="opts" checked />Público
+            <input type="radio" value="private" name="post-check" id="private-posts" class="opts" />Privado
+            <button class="send-button btn btn-outline-dark opts">enviar</button>
+            <button id="logoutBtn" class="btn btn-outline-dark opts">logout</button> 
+          </div> 
+        </div>
       </div>
       <div class="post-list">
         <div class="palommers-feed"></div>

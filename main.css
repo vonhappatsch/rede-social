@@ -73,8 +73,17 @@
 }
 
 .post-input {
-    width: 30vw;
-    height: 10vh;
+    min-width: 30vw;
+    width: 50vw;
+    height: 12vh;
+}
+
+.opts {
+    margin-left: 1vw;
+}
+
+.post-opts {
+    margin-top: 2vh;
 }
 
 .posts {
