@@ -1,7 +1,3 @@
-const database = firebase.database();
-const auth = firebase.auth();
-const usersRef = database.ref('users');
-
 $(document).ready(function(){
   
   $("#signInBtn").click(function() {
@@ -10,7 +6,6 @@ $(document).ready(function(){
 
     auth.signInWithEmailAndPassword(email, password)
       .then(function(result) {
-        // se deu certo
         window.location = `home.html?userId=${result.user.uid}`;
       })
 
@@ -95,7 +90,6 @@ $(document).ready(function(){
 
   $("#logoutBtn").click(function() {
     auth.signOut().then(function() {
-      // deu certo
         window.location = "index.html";
       }).catch(function(error) {
         // Handle Errors here.

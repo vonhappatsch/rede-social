@@ -1,16 +1,12 @@
-const database = firebase.database();
-const auth = firebase.auth();
-const usersRef = database.ref('users');
-const user = auth.currentUser;
-
 $(document).ready(function(){
   const register = (email, password, name, lastname, username, id) => {
-    database.ref(`users/${id}`).set({
+    usersRef.set({
       email,
-        password,
-        name,
-        lastname,
-        username
+      password,
+      name,
+      lastname,
+      username
+
     })
   }
 
@@ -23,7 +19,6 @@ $(document).ready(function(){
 
     auth.createUserWithEmailAndPassword(email, password)
       .then(function(res) {
-        // se deu certo
         register(email, password, name, lastname, username, res.user.uid);
         window.location = `home.html?userId=${res.user.uid}`;
         })
@@ -54,7 +49,6 @@ $(document).ready(function(){
       alert("Por favor insira um username");
       return;
     }
-
   });
 
 
