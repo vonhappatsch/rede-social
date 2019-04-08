@@ -1,14 +1,17 @@
+const database = firebase.database();
+const auth = firebase.auth();
+
 $(document).ready(function(){
+
   const register = (email, password, name, lastname, username, id) => {
-    usersRef.set({
+    database.ref(`users/${id}`).set({
       email,
       password,
       name,
       lastname,
       username
-
-    })
-  }
+    });
+  };
 
   $("#signUpBtn").click(function() {
     let name = $("#firstName").val();
@@ -67,6 +70,5 @@ $(document).ready(function(){
       // No user is signed in
     }
   });
-
   
 });

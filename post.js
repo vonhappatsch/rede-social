@@ -55,7 +55,7 @@ $(document).ready(function(){
       <div class="posts">
         <p data-text-id="${key}" class="palommers-post">${text}</p>
       </div>
-      <div class="post-btns">
+      <div class="post-btns d-flex justify-content-end">
         <button data-edit-id="${key}" class="edit-post btn btn-sm btn-outline-dark">Editar</button>
         <button data-delete-id="${key}" class="delete-post btn btn-sm btn-outline-danger">Deletar</button>
       <div>

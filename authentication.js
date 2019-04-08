@@ -1,10 +1,12 @@
+const database = firebase.database();
+
 $(document).ready(function(){
   
   $("#signInBtn").click(function() {
     let email = $("#email-input").val();
     let password = $("#password-input").val();
 
-    auth.signInWithEmailAndPassword(email, password)
+    firebase.auth().signInWithEmailAndPassword(email, password)
       .then(function(result) {
         window.location = `home.html?userId=${result.user.uid}`;
       })
@@ -22,8 +24,8 @@ $(document).ready(function(){
     e.preventDefault();
     let provider = new firebase.auth.GoogleAuthProvider();
     
-    auth.useDeviceLanguage();
-    auth.signInWithPopup(provider).then(function(result) {
+    firebase.auth().useDeviceLanguage();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
       // This gives you a Google Access Token. You can use it to access the Google API.
       let token = result.credential.accessToken;
       // The signed-in user info.
@@ -46,8 +48,8 @@ $(document).ready(function(){
   $("#loginFacebook").click(function() {
     let provider = new firebase.auth.FacebookAuthProvider();
 
-    auth.useDeviceLanguage();
-    auth.signInWithPopup(provider).then(function(result) {
+    firebase.auth().useDeviceLanguage();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
       let token = result.credential.accessToken;
       // The signed-in user info.
@@ -66,11 +68,9 @@ $(document).ready(function(){
     })
 
 
-    auth.onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           // User is signed in
-    
-          let user = auth.currentUser;
     
           if (user != null) {
             name = user.name;
@@ -89,13 +89,14 @@ $(document).ready(function(){
 
 
   $("#logoutBtn").click(function() {
-    auth.signOut().then(function() {
-        window.location = "index.html";
-      }).catch(function(error) {
-        // Handle Errors here.
-        let errorCode = error.code;
-        let errorMessage = error.message;
-      });
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+      window.location = "index.html";
+    }).catch(function(error) {
+      // An error happened.
+      let errorCode = error.code;
+      let errorMessage = error.message;
+    });
   });
 
 });

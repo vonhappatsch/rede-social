@@ -1,3 +1,38 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    h1.feed-title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+        font-size: 10.5vw;
+    }
+
+    div.posts {
+        width: 93vw;
+    }
+
+    div.post-opts {
+        width: 95vw;
+        margin-bottom: 2.5vh;
+        justify-content: space-around;
+        font-size: 80%;
+    }
+
+    div.opts {
+        font-size: 70%;
+        align-content: center;
+    }
+    
+    input.post-input {
+        width: 93vw;
+    }
+
+    div.mainbox {
+        height: 100%;
+        
+    }
+
+}
+
 .centering {
     width: 100vw;
     height: 100vh;
@@ -76,21 +111,27 @@
     min-width: 30vw;
     width: 50vw;
     height: 12vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 95%;
 }
 
 .opts {
     margin-left: 1vw;
+    font-family: 'Playfair Display', serif;
 }
 
 .post-opts {
     margin-top: 2vh;
+    font-family: 'Playfair Display', serif;
 }
 
 .posts {
-    width: 50vw;
+    width: 55vw;
     height: 100%;
     background-color: burlywood;
     margin: 0.5vh 2vw 0.5vh 0vw;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
 }
 
 .palommers-post {
@@ -99,4 +140,11 @@
 
 .post-btns {
     margin-bottom: 6vh;
+    font-family: 'Playfair Display', serif;
+}
+
+.feed-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 3.9em;
 }
