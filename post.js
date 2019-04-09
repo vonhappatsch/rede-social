@@ -81,10 +81,6 @@ $(document).ready(function(){
     }
   });
 
-
-
-
-
   function managePost(text, key, name){
     $(".post-list").append(`
     <div>
@@ -101,6 +97,7 @@ $(document).ready(function(){
 
     $(`button[data-edit-id=${key}]`).click(function(){
       let newText = prompt(`Altere seu texto: ${text}`);
+
       if (newText) {
         $(`p[data-text-id=${key}]`).html(newText);
         database.ref('posts/' + USER_ID + "/" + key).update({

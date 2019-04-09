@@ -1,10 +1,11 @@
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
     h1.feed-title {
         font-family: 'Playfair Display', serif;
         font-weight: 900;
         font-size: 10.5vw;
         margin: 1.2vh 0vw 0vh 0vw;
+        color: whitesmoke;
     }
 
     div.posts {
@@ -28,9 +29,11 @@
     }
 
     div.mainbox {
+        width: 100vw;
         height: 100%;
         display: flex;
         flex-direction: column;
+        background: url(Palomita.jpg) no-repeat 50% fixed / cover;
     }
 
     div.login-form {
@@ -38,18 +41,23 @@
     }
 
     div.panel-title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
         font-size: 3em;
+        color: whitesmoke;
     }
 
     div.login-choice {
         font-family: 'Roboto', sans-serif;
-        font-size: 0.9em;
+        font-size: 1em;
+        color: whitesmoke;
     }
 
     div.control-sub {
         font-family: 'Roboto', sans-serif;
         font-size: 0.83em;
         text-align: center;
+        color: rgb(133, 86, 93);
     }
 
     div.post-btns {
@@ -65,6 +73,12 @@
         margin: 0.8vh 2.9vw 0vh 0vw;
     }
 
+    button.btn {
+        color: whitesmoke;
+        background-color: pink;
+        font-style: bold;
+    }
+
 }
 
 .centering {
@@ -75,6 +89,7 @@
 .mainbox {
     background-color: blanchedalmond;
     padding: 2vh 2.5vw 2vh 2.5vw;
+    width: 35vw;
 }
 
 .lost-password {
@@ -111,7 +126,7 @@
 }
 
 .control a {
-    color: black;
+    color: rgb(133, 86, 93);
 }
 
 .control a:hover {
@@ -119,7 +134,7 @@
 }
 
 .lost-password a {
-    color: black;
+    color: whitesmoke;
 }
 
 .lost-password a:hover {
@@ -212,8 +227,4 @@
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     font-size: 3.9em;
-}
-
-.select-menu {
-    margin-left: 0.4vw;
 }
