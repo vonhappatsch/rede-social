@@ -11,12 +11,43 @@ $(document).ready(function(){
       snapshot.forEach(function(childSnapshot){
         let childKey = childSnapshot.key;
         let childData = childSnapshot.val();
+        console.log(childData);
         managePost(childData.text, childKey, userInfo.name);
         
         //$(".post-list").append(`<li>${childData.text}<li>`);
       });    
     });
   })
+
+  $("#select").change(function(){
+    let sos = $(this).val();
+
+    database.ref("users/" + USER_ID).once("value")
+      .then(function(snapshot){
+        let userInfo = snapshot.val()
+        // $(".user-name").text(userInfo.name)
+        console.log(userInfo);
+
+        database.ref(`posts/` + USER_ID).once('value').then(function(snapshot){
+          $(".post-list").html("");
+          snapshot.forEach(function(childSnapshot){
+            let childKey = childSnapshot.key;
+            let childData = childSnapshot.val();
+            console.log(childData);
+
+            if (childData.type === sos) {
+              managePost(childData.text, childKey, userInfo.name);
+            } else if (sos === "all") {
+              managePost(childData.text, childKey, userInfo.name);
+            }
+            
+          });    
+        });
+      })
+
+    
+
+  });
 
   // database.ref(`users/`).once('value')
   // .then(function(snapshot){
@@ -33,6 +64,8 @@ $(document).ready(function(){
     let text = $(".post-input").val();
     $(".post-input").val("");
 
+    let privacyOpt = $('input[name=post-check]:checked').val();
+
     let res = confirm("Você deseja mesmo postar?");
 
     if (res) {
@@ -40,12 +73,16 @@ $(document).ready(function(){
       .then(function(snapshot){
         let userInfo = snapshot.val();
         let newPostInDb = database.ref(`posts/` + USER_ID).push({
-          text: text
+          text: text,
+          type: privacyOpt
         });
         managePost(text, newPostInDb.key, userInfo.name);
       });
     }
   });
+
+
+
 
 
   function managePost(text, key, name){

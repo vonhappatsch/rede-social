@@ -21,20 +21,31 @@
         <div class="col-12">
           <h1 class="feed-title">Aqui seria o home</h1>
         </div>
-        <div class="col-12">
-           <input type="text" class="post-input form-control-lg" />
+        <div class="container">
+          <div class="row justify-content-center">
+            <input type="text" class="post-input form-control-lg" />
+        </div>
         </div>
         <div class="container-fluid">
-          <div class="col-12 col-md-6 d-flex justify-content-end post-opts">
-            <input type="radio" value="public" name="post-check" id="public-posts" class="opts" checked />Público
-            <input type="radio" value="private" name="post-check" id="private-posts" class="opts" />Privado
-            <button class="send-button btn btn-sm btn-outline-dark opts">Enviar</button>
-            <button id="logoutBtn" class="btn btn-sm btn-outline-dark opts">Logout</button> 
-         </div> 
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-6 d-flex justify-content-end post-opts">
+              <input type="radio" value="public" name="post-check" id="public-posts" class="opts" checked />Público
+              <input type="radio" value="private" name="post-check" id="private-posts" class="opts" />Privado
+              <button class="send-button btn btn-sm btn-outline-dark opts">Enviar</button>
+              <button id="logoutBtn" class="btn btn-sm btn-outline-dark opts">Logout</button> 
+              <select id="select" class="select-menu">
+                <option value="public" selected>público</option>
+                <option value="private">privado</option>
+                <option value="all">todos</option>
+              </select>
+            </div> 
+          </div>
+        </div>
       </div>
-      </div>
-      <div class="post-list">
-        <div class="palommers-feed"></div>
+      <div class="row justify-content-center">
+        <div class="post-list">
+          <div class="palommers-feed"></div>
+        </div>
       </div>
     </section>
     <script

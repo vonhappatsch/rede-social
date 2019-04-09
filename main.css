@@ -4,6 +4,7 @@
         font-family: 'Playfair Display', serif;
         font-weight: 900;
         font-size: 10.5vw;
+        margin: 1.2vh 0vw 0vh 0vw;
     }
 
     div.posts {
@@ -49,6 +50,19 @@
         font-family: 'Roboto', sans-serif;
         font-size: 0.83em;
         text-align: center;
+    }
+
+    div.post-btns {
+        width: 100%;
+        margin-bottom: 6vh;
+    }
+
+    button.edit-post {
+        margin: 0.8vh 2vw 0vh 0vw;
+    }
+
+    button.delete-post {
+        margin: 0.8vh 2.9vw 0vh 0vw;
     }
 
 }
@@ -191,12 +205,15 @@
 }
 
 .edit-post, .delete-post {
-    margin-right: 0.5vw;
-    margin-top: 0.5vh;
+    margin: 0.5vh 0.5vw 0vh 0vw;
 }
 
 .feed-title {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     font-size: 3.9em;
+}
+
+.select-menu {
+    margin-left: 0.4vw;
 }
