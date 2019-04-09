@@ -76,7 +76,7 @@ $(document).ready(function(){
           text: text,
           type: privacyOpt
         });
-        managePost(text, newPostInDb.key, userInfo.name);
+        managePost(text, newPostInDb.key, userInfo.username);
       });
     }
   });
