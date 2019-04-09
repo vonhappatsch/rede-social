@@ -86,6 +86,13 @@
     height: 100vh;
 }
 
+.princess {
+    background-image: url("http://66.media.tumblr.com/a5e20a37c9c56a5ca46092e629be8761/tumblr_mfinu8U8Da1qbe0gto1_r1_500.gif");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 30%;
+}
+
 .mainbox {
     background-color: blanchedalmond;
     padding: 2vh 2.5vw 2vh 2.5vw;
