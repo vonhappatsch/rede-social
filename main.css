@@ -79,6 +79,10 @@
         font-style: bold;
     }
 
+    div.leftie {
+        background-image: url("https://webgradients.com/public/webgradients_png/049%20Fresh%20Milk.png");
+    }
+
 }
 
 .centering {
@@ -243,4 +247,8 @@
 
 .home {
     background-image: url("https://webgradients.com/public/webgradients_png/049%20Fresh%20Milk.png");
+}
+
+.control-sub a {
+    color: black;
 }
