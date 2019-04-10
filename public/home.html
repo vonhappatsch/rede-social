@@ -50,18 +50,15 @@
         </div>
     </nav>
     <section class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                  <h1 class="feed-title">console.log("Palomita linda");</h1>
-                </div>
-            </div>
-          <div class="row justify-content-center align-content-center">
-            <input type="text" class="post-input form-control-lg" />
+      <div class="row">
+        <div class="col-12">
+          <h1 class="feed-title">console.log("Palomita linda");</h1>
         </div>
+      </div>
+      <div class="container h-100 justify-content-center align-content-center box">
+        <div class="row justify-content-center align-content-center box">
+          <input type="text" class="post-input form-control-lg" />
         </div>
-        <div class="container-fluid">
-          <div class="row justify-content-center">
             <div class="col-12 col-md-6 d-flex justify-content-end post-opts">
               <input type="radio" value="public" name="post-check" id="public-posts" class="opts" checked />Público
               <input type="radio" value="private" name="post-check" id="private-posts" class="opts" />Privado
@@ -73,13 +70,11 @@
               </select>
             </div> 
           </div>
+        <div class="row justify-content-center">
+          <div class="post-list">
+            <div class="palommers-feed"></div>
+          </div>
         </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="post-list">
-          <div class="palommers-feed"></div>
-        </div>
-      </div>
     </section>
     <script
       src="http://code.jquery.com/jquery-3.3.1.min.js"
