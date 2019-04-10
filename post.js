@@ -73,22 +73,19 @@ $(document).ready(function(){
       <div class="post-btns d-flex justify-content-end">
         <button data-edit-id="${key}" class="edit-post btn btn-sm btn-outline-dark">Editar</button>
         <button data-delete-id="${key}" class="delete-post btn btn-sm btn-outline-danger">Deletar</button>
-        <button data-like-id="${key}" class="">${likes}</button>
+        <button data-like-id="${key}" class="btn btn-sm outline-dark"><i class="fab fa-gratipay"></i></button><p class="like-result text-center" data-like-id="${key}">${likes}</p>
       <div>
     </div>
     `);
 
     $(`button[data-like-id=${key}]`).click(function(){
- 
-      let result = 0;
+      let result = parseInt($(`.like-result[data-like-id="${key}"]`).text());
       result += 1;
-      $(`button[data-like-id=${key}]`).text(result);
+      $(`.like-result[data-like-id="${key}"]`).text(result);
       console.log(result)
       database.ref('posts/' + USER_ID + "/" + key).update({
         likes: result
       })
-
-      
     })
 
     

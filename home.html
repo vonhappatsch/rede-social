@@ -17,6 +17,38 @@
   </head>
   <body class="home">
     <!-- nav? -->
+    <nav class="navbar navbar-expand-sm sticky-top navbar-dark nav-pam">
+        <a class="navbar-brand" href="#">Palommers</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                   <a class="nav-link waves-effect waves-light" href="home.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="sobre.html">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="#">Palommers</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink"               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paloma</a>
+                    <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item waves-effect waves-light" href="#">Mentorias</a>
+                        <a class="dropdown-item waves-effect waves-light" href="#">Curiosidades</a>
+                        <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <div class="md-form my-0">
+                  <button id="logoutBtn" class="btn btn-sm btn-outline-light opts">Logout</button>
+                </div>
+            </form>
+        </div>
+    </nav>
     <section class="container-fluid">
         <div class="container">
             <div class="row">
@@ -33,8 +65,7 @@
             <div class="col-12 col-md-6 d-flex justify-content-end post-opts">
               <input type="radio" value="public" name="post-check" id="public-posts" class="opts" checked />Público
               <input type="radio" value="private" name="post-check" id="private-posts" class="opts" />Privado
-              <button class="send-button btn btn-sm btn-outline-dark opts">Enviar</button>
-              <button id="logoutBtn" class="btn btn-sm btn-outline-dark opts">Logout</button> 
+              <button class="send-button btn btn-sm btn-outline-dark opts">Enviar</button> 
               <select id="select" class="select-menu">
                 <option value="public">público</option>
                 <option value="private">privado</option>

@@ -252,3 +252,13 @@
 .login-link a {
     color: whitesmoke;
 }
+
+.nav-pam {
+    background-color: black;
+    font-family: 'Playfair Display', serif;
+}
+
+.like-result {
+    font-size: 1em;
+    margin: 0.8vh 0.8vw 0vh 0vw;
+}
