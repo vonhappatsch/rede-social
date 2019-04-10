@@ -31,13 +31,13 @@
                     <a class="nav-link waves-effect waves-light" href="sobre.html">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="#">Palommers</a>
+                    <a class="nav-link waves-effect waves-light" href="palommers.html">Palommers</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink"               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paloma</a>
                     <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item waves-effect waves-light" href="#">Mentorias</a>
-                        <a class="dropdown-item waves-effect waves-light" href="#">Curiosidades</a>
+                        <a class="dropdown-item waves-effect waves-light" href="mentorias.html">Mentorias</a>
+                        <a class="dropdown-item waves-effect waves-light" href="paloma.html">Curiosidades</a>
                         <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>
                     </div>
                 </li>
@@ -56,25 +56,29 @@
         </div>
       </div>
       <div class="container h-100 justify-content-center align-content-center box">
-        <div class="row justify-content-center align-content-center box">
+        <div class="row justify-content-center align-content-center">
           <input type="text" class="post-input form-control-lg" />
         </div>
+          <div class="row justify-content-center">
             <div class="col-12 col-md-6 d-flex justify-content-end post-opts">
               <input type="radio" value="public" name="post-check" id="public-posts" class="opts" checked />Público
               <input type="radio" value="private" name="post-check" id="private-posts" class="opts" />Privado
-              <button class="send-button btn btn-sm btn-outline-dark opts">Enviar</button> 
               <select id="select" class="select-menu">
                 <option value="public">público</option>
                 <option value="private">privado</option>
                 <option value="all" selected>todos</option>
               </select>
+              <button class="send-button btn btn-sm btn-outline-dark opts">Enviar</button> 
             </div> 
           </div>
-        <div class="row justify-content-center">
+      </div>
+      <div class="container h-100 justify-content-center align-content-center box">
+        <div class="row justify-content-center align-content-center">
           <div class="post-list">
             <div class="palommers-feed"></div>
           </div>
         </div>
+      </div>
     </section>
     <script
       src="http://code.jquery.com/jquery-3.3.1.min.js"

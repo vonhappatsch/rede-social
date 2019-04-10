@@ -84,6 +84,11 @@
         background-size: cover;
     }
 
+    div.box {
+        background-color: white;
+        padding: 2vh 3vw 2vh 3vw;
+    }
+
 }
 
 .centering {
@@ -180,6 +185,7 @@
     height: 12vh;
     font-family: 'Roboto', sans-serif;
     font-size: 95%;
+    margin-top: 2vh;
 }
 
 .opts {
@@ -188,6 +194,7 @@
 }
 
 .post-opts {
+    justify-content: end;
     margin-top: 2vh;
     font-family: 'Playfair Display', serif;
 }
@@ -270,8 +277,10 @@
 .select-menu {
     border: none;
     background-color: whitesmoke;
+    margin-left: 1vw;
 }
 
 .box {
     background-color: white;
+    padding: 2vh 2vw 2vh 2vw;
 }
