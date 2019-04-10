@@ -79,8 +79,10 @@
         font-style: bold;
     }
 
-    div.leftie {
-        background-image: url("https://webgradients.com/public/webgradients_png/049%20Fresh%20Milk.png");
+    div.signup {
+        width: 100%;
+        background-image: url("Palomita.jpg");
+        background-size: cover;
     }
 
 }
@@ -119,7 +121,7 @@
 }
 
 .panel-title {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-family: 'Playfair Display', serif;
     font-weight: 900;
 }
@@ -136,20 +138,8 @@
     margin-top: 0.5vh;
 }
 
-.control a {
-    color: rgb(133, 86, 93);
-}
-
-.control a:hover {
-    color: pink;
-}
-
-.lost-password a {
-    color: whitesmoke;
-}
-
-.lost-password a:hover {
-    color: pink;
+.control-sub a {
+    color: black;
 }
 
 .btns {
@@ -245,10 +235,21 @@
     background-color: #fff8d7;
 }
 
-.home {
-    background-image: url("https://webgradients.com/public/webgradients_png/049%20Fresh%20Milk.png");
+.signup {
+    background-image: url(Palomita.jpg);
+    background-size: cover;
+    color: whitesmoke;
 }
 
-.control-sub a {
-    color: black;
+.home {
+    background-color: pink;
+}
+
+.title-signup {
+    color: whitesmoke;
+    font-size: 2.5em;
+}
+
+.login-link a {
+    color: whitesmoke;
 }

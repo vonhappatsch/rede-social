@@ -3,60 +3,40 @@ let USER_ID = window.location.search.match(/\?userId=(.*)/)[1];
 $(document).ready(function(){ 
   database.ref("users/" + USER_ID).once("value")
   .then(function(snapshot){
-    let userInfo = snapshot.val()
-    // $(".user-name").text(userInfo.name)
-    console.log(userInfo);
+    let userInfo = snapshot.val();
 
     database.ref(`posts/` + USER_ID).once('value').then(function(snapshot){
       snapshot.forEach(function(childSnapshot){
         let childKey = childSnapshot.key;
         let childData = childSnapshot.val();
-        console.log(childData);
-        managePost(childData.text, childKey, userInfo.name);
-        
-        //$(".post-list").append(`<li>${childData.text}<li>`);
+        managePost(childData.text, childKey, userInfo.name, childData.likes);
       });    
     });
   })
 
   $("#select").change(function(){
-    let sos = $(this).val();
+    let feed = $(this).val();
 
     database.ref("users/" + USER_ID).once("value")
       .then(function(snapshot){
-        let userInfo = snapshot.val()
-        // $(".user-name").text(userInfo.name)
-        console.log(userInfo);
+        let userInfo = snapshot.val();
 
         database.ref(`posts/` + USER_ID).once('value').then(function(snapshot){
           $(".post-list").html("");
           snapshot.forEach(function(childSnapshot){
             let childKey = childSnapshot.key;
             let childData = childSnapshot.val();
-            console.log(childData);
 
-            if (childData.type === sos) {
-              managePost(childData.text, childKey, userInfo.name);
-            } else if (sos === "all") {
-              managePost(childData.text, childKey, userInfo.name);
+            if (childData.type === feed) {
+              managePost(childData.text, childKey, userInfo.name, childData.likes);
+            } else if (feed === "all") {
+              managePost(childData.text, childKey, userInfo.name, childData.likes);
             }
             
           });    
         });
       })
-
-    
-
   });
-
-  // database.ref(`users/`).once('value')
-  // .then(function(snapshot){
-  //   snapshot.forEach(function(childSnapshot){
-  //     let childKey = childSnapshot.key;
-  //     let childData = childSnapshot.val();
-  //     createUsers(childData.name, childKey);
-  //   });    
-  // });
 
 
   $(".send-button").click(function(event) {
@@ -66,22 +46,24 @@ $(document).ready(function(){
 
     let privacyOpt = $('input[name=post-check]:checked').val();
 
-    let res = confirm("Você deseja mesmo postar?");
+    let confirmation = confirm("Você deseja mesmo postar?");
 
-    if (res) {
+    if (confirmation) {
       database.ref("users/" + USER_ID).once("value")
       .then(function(snapshot){
         let userInfo = snapshot.val();
         let newPostInDb = database.ref(`posts/` + USER_ID).push({
           text: text,
-          type: privacyOpt
+          type: privacyOpt,
+          likes: 0
         });
-        managePost(text, newPostInDb.key, userInfo.username);
+        managePost(text, newPostInDb.key, userInfo.username, 0);
       });
     }
   });
 
-  function managePost(text, key, name){
+  function managePost(text, key, name, likes){
+ 
     $(".post-list").append(`
     <div>
       <p class="userInfo">${name}</p> 
@@ -91,9 +73,25 @@ $(document).ready(function(){
       <div class="post-btns d-flex justify-content-end">
         <button data-edit-id="${key}" class="edit-post btn btn-sm btn-outline-dark">Editar</button>
         <button data-delete-id="${key}" class="delete-post btn btn-sm btn-outline-danger">Deletar</button>
+        <button data-like-id="${key}" class="">${likes}</button>
       <div>
     </div>
     `);
+
+    $(`button[data-like-id=${key}]`).click(function(){
+ 
+      let result = 0;
+      result += 1;
+      $(`button[data-like-id=${key}]`).text(result);
+      console.log(result)
+      database.ref('posts/' + USER_ID + "/" + key).update({
+        likes: result
+      })
+
+      
+    })
+
+    
 
     $(`button[data-edit-id=${key}]`).click(function(){
       let newText = prompt(`Altere seu texto: ${text}`);
@@ -114,17 +112,9 @@ $(document).ready(function(){
         database.ref('posts/' + USER_ID + "/" + key).remove();
       }
     });
-  }
+  };
+
+
 
 });
-
-
-// function createUsers(name, key){
-//   $(".users-list").append(`
-//   <li>
-//     <span>${name}</span>
-//     <button data-user-id="${key}">seguir</button>
-//   </li>
-//   `);
-// }
 
