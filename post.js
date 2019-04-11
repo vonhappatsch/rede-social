@@ -1,21 +1,21 @@
-let USER_ID = window.location.search.match(/\?userId=(.*)/)[1];
+const USER_ID = window.location.search.match(/\?userId=(.*)/)[1];
 
 $(document).ready(function(){ 
   database.ref("users/" + USER_ID).once("value")
   .then(function(snapshot){
-    let userInfo = snapshot.val();
+    const userInfo = snapshot.val();
 
     database.ref(`posts/` + USER_ID).once('value').then(function(snapshot){
       snapshot.forEach(function(childSnapshot){
-        let childKey = childSnapshot.key;
-        let childData = childSnapshot.val();
+        const childKey = childSnapshot.key;
+        const childData = childSnapshot.val();
         managePost(childData.text, childKey, userInfo.name, childData.likes);
       });    
     });
   })
 
   $("#select").change(function(){
-    let feed = $(this).val();
+    const feed = $(this).val();
 
     database.ref("users/" + USER_ID).once("value")
       .then(function(snapshot){
@@ -92,7 +92,7 @@ $(document).ready(function(){
     $(`button[data-edit-id=${key}]`).click(function(){
       $(`p[data-text-id=${key}]`).attr('contentEditable', 'true').focus().blur(function() {
 
-        var newText = $(this).html();
+        let newText = $(this).html();
         $(`p[data-text-id=${key}]`).html(newText);
         database.ref('posts/' + USER_ID + "/" + key).update({
             text: newText
