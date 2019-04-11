@@ -38,18 +38,16 @@ $(document).ready(function(){
       })
   });
 
-
   $(".send-button").click(function(event) {
     event.preventDefault();
     let text = $(".post-input").val();
-    $(".post-input").val("");
+    if (text === "") {
+      button.disabled === true;
+    }
 
     let privacyOpt = $('input[name=post-check]:checked').val();
 
-    let confirmation = confirm("Você deseja mesmo postar?");
-
-    if (confirmation) {
-      database.ref("users/" + USER_ID).once("value")
+    database.ref("users/" + USER_ID).once("value")
       .then(function(snapshot){
         let userInfo = snapshot.val();
         let newPostInDb = database.ref(`posts/` + USER_ID).push({
@@ -59,7 +57,7 @@ $(document).ready(function(){
         });
         managePost(text, newPostInDb.key, userInfo.username, 0);
       });
-    }
+    $(".post-input").val("");
   });
 
   function managePost(text, key, name, likes){
