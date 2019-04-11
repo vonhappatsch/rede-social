@@ -1,12 +1,12 @@
 const USER_ID = window.location.search.match(/\?userId=(.*)/)[1];
 
-$(document).ready(function(){ 
-  database.ref("users/" + USER_ID).once("value")
-  .then(function(snapshot){
-    const userInfo = snapshot.val();
+$(document).ready(function() { 
+  database.ref('users/' + USER_ID).once('value')
+    .then(function(snapshot) {
+      let userInfo = snapshot.val();
 
-    database.ref(`posts/` + USER_ID).once('value').then(function(snapshot){
-      snapshot.forEach(function(childSnapshot){
+    database.ref(`posts/` + USER_ID).once('value').then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
         const childKey = childSnapshot.key;
         const childData = childSnapshot.val();
         managePost(childData.text, childKey, userInfo.name, childData.likes);
@@ -15,41 +15,41 @@ $(document).ready(function(){
   });
   
 
-  $("#select").change(function(){
-    const feed = $(this).val();
+  $('#select').change(function(){
+    let feed = $(this).val();
 
-    database.ref("users/" + USER_ID).once("value")
-      .then(function(snapshot){
+    database.ref('users/' + USER_ID).once('value')
+      .then(function(snapshot) {
         let userInfo = snapshot.val();
 
-        database.ref(`posts/` + USER_ID).once('value').then(function(snapshot){
-          $(".post-list").html("");
-          snapshot.forEach(function(childSnapshot){
+        database.ref(`posts/` + USER_ID).once('value').then(function(snapshot) {
+          $('.post-list').html("");
+          snapshot.forEach(function(childSnapshot) {
             let childKey = childSnapshot.key;
             let childData = childSnapshot.val();
 
             if (childData.type === feed) {
               managePost(childData.text, childKey, userInfo.name, childData.likes);
-            } else if (feed === "all") {
+            } else if (feed === 'all') {
               managePost(childData.text, childKey, userInfo.name, childData.likes);
             }
-            
           });    
         });
-      })
-  });
+      });
+    });
 
-  $(".send-button").click(function(event) {
+  $('.send-button').click(function(event){
     event.preventDefault();
     let text = $(".post-input").val();
+
     if (text === "") {
       button.disabled === true;
     }
 
     let privacyOpt = $('input[name=post-check]:checked').val();
 
-    database.ref("users/" + USER_ID).once("value")
-      .then(function(snapshot){
+    database.ref('users/' + USER_ID).once('value')
+      .then(function(snapshot) {
         let userInfo = snapshot.val();
         let newPostInDb = database.ref(`posts/` + USER_ID).push({
           text: text,
@@ -58,12 +58,12 @@ $(document).ready(function(){
         });
         managePost(text, newPostInDb.key, userInfo.username, 0);
       });
-    $(".post-input").val("");
+    $('.post-input').val("");
   });
 
-  function managePost(text, key, name, likes){
- 
-    $(".post-list").append(`
+
+  function managePost(text, key, name, likes) {
+    $('.post-list').append(`
     <div>
       <p class="userInfo">${name}</p>
       <div class="posts">
@@ -77,22 +77,22 @@ $(document).ready(function(){
     </div>
     `);
 
+
     $(`button[data-like-id=${key}]`).click(function(){
       let result = parseInt($(`.like-result[data-like-id="${key}"]`).text());
       result += 1;
       $(`.like-result[data-like-id="${key}"]`).text(result);
-      console.log(result)
       database.ref('posts/' + USER_ID + "/" + key).update({
         likes: result
-      })
+      });
     });
 
 
     $(`button[data-edit-id=${key}]`).click(function(){
       $(`p[data-text-id=${key}]`).attr('contentEditable', 'true').focus().blur(function() {
-
         let newText = $(this).html();
         $(`p[data-text-id=${key}]`).html(newText);
+
         if (newText) {
           database.ref('posts/' + USER_ID + "/" + key).update({
             text: newText
@@ -102,10 +102,9 @@ $(document).ready(function(){
           alert("Insira um conteúdo");
           $(`p[data-text-id=${key}]`).html(text);
         }
-      })
-
-        
+      });
     });
+
 
     $(`button[data-delete-id=${key}]`).click(function(){
       let warning = confirm("Você tem certeza de que deseja deletar?");
@@ -116,8 +115,4 @@ $(document).ready(function(){
       }
     });
   };
-
-  
-
 });
-

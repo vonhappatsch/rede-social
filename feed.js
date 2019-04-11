@@ -1,7 +1,7 @@
 const postsRef = firebase.database().ref('feed/');
 
 $(document).ready(function() {
-  postsRef.once("value").then(function(snapshot) {
+  postsRef.once('value').then(function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       let childKey = childSnapshot.key;
       let childData = childSnapshot.val();
@@ -9,11 +9,11 @@ $(document).ready(function() {
     });
   });
 
-  $(".send-button").click(function(event) {
+  $('.send-button').click(function(event) {
     event.preventDefault();
 
-    let newPost = $(".post-input").val();
-    $(".post-input").val("");
+    let newPost = $('.post-input').val();
+    $('.post-input').val("");
     createPost(newPost);
 
     postsRef.push({
@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 
   function createPost(newPost){
-    $(".post-list").append(`
+    $('.post-list').append(`
     <div class="posts">
       <p class="palommers-post">${newPost}</p>
     </div>

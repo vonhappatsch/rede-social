@@ -1,10 +1,9 @@
 const database = firebase.database();
 
-$(document).ready(function(){
-  
-  $("#signInBtn").click(function() {
-    let email = $("#email-input").val();
-    let password = $("#password-input").val();
+$(document).ready(function() {
+  $('#signInBtn').click(function() {
+    let email = $('#email-input').val();
+    let password = $('#password-input').val();
 
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(function(result) {
@@ -20,7 +19,7 @@ $(document).ready(function(){
   });
   
 
-  $("#loginGoogle").click(function(e) {
+  $('#loginGoogle').click(function(e) {
     e.preventDefault();
     let provider = new firebase.auth.GoogleAuthProvider();
     
@@ -45,7 +44,7 @@ $(document).ready(function(){
   });
 
 
-  $("#loginFacebook").click(function() {
+  $('#loginFacebook').click(function() {
     let provider = new firebase.auth.FacebookAuthProvider();
 
     firebase.auth().useDeviceLanguage();
@@ -68,27 +67,24 @@ $(document).ready(function(){
     })
 
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in
-    
-          if (user != null) {
-            name = user.name;
-            displayName = user.displayName;
-            lastname = user.lastname;
-            username = user.username;
-            email = user.email;
-            password = user.password;
-            emailVerified = user.emailVerified;
-            uid = user.uid;
-          }
-        } else {
-          // No user is signed in
-        }
-      });
+    auth.onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in
+          name = user.name;
+          displayName = user.displayName;
+          lastname = user.lastname;
+          username = user.username;
+          email = user.email;
+          password = user.password;
+          emailVerified = user.emailVerified;
+          uid = user.uid;
+      } else {
+        // No user is signed in
+      }
+    });
 
 
-  $("#logoutBtn").click(function() {
+  $('#logoutBtn').click(function() {
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
       window.location = "index.html";
@@ -98,5 +94,4 @@ $(document).ready(function(){
       let errorMessage = error.message;
     });
   });
-
 });

@@ -1,8 +1,7 @@
 const database = firebase.database();
 const auth = firebase.auth();
 
-$(document).ready(function(){
-
+$(document).ready(function() {
   const register = (email, password, name, lastname, username, id) => {
     database.ref(`users/${id}`).set({
       email,
@@ -12,33 +11,33 @@ $(document).ready(function(){
       username
     });
   };
+  
 
-  $("#signUpBtn").click(function() {
-    let name = $("#firstName").val();
-    let lastname = $("#lastName").val();
-    let username = $("#userName").val();
-    let email = $("#emailInput").val();
-    let password = $("#passwordInput").val();
+  $('#signUpBtn').click(function() {
+    let name = $('#firstName').val();
+    let lastname = $('#lastName').val();
+    let username = $('#userName').val();
+    let email = $('#emailInput').val();
+    let password = $('#passwordInput').val();
 
     auth.createUserWithEmailAndPassword(email, password)
       .then(function(res) {
         register(email, password, name, lastname, username, res.user.uid);
         window.location = `home.html?userId=${res.user.uid}`;
         })
-      .catch(function(error){
+      .catch(function(error) {
         // se deu tudo errado
-        // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;
         // ...
         if (errorCode == "auth/email-already-in-use") {
-            alert("Email já registrado");
+          alert("Email já registrado");
         } else if (errorCode == "auth/invalid-email") {
           alert("Email inválido");
         } else if (errorCode == "auth/weak-password") {
-            alert("A senha escolhida deve conter mais de 6 dígitos");
+          alert("A senha escolhida deve conter mais de 6 dígitos");
         } else {
-            alert(errorMessage);
+          alert(errorMessage);
         }
      });
 
@@ -70,5 +69,4 @@ $(document).ready(function(){
       // No user is signed in
     }
   });
-  
 });
