@@ -18,7 +18,7 @@ Se você tem vergonha de declarar seu amor para a Paloma ou pedir para tirar dú
 (incluir aqui)
 
 # Protótipo
-(incluir o link)
+*[Protótipo da primeira ideia de uma versão mobile](https://marvelapp.com/8b74936/screen/55637113)
 
 # Pesquisas | Entrevistas com usuários | Testes
 Fizemos uma pesquisa com alunas de ambas as gerações através do serviço de formulário do Google, o que nos ajudou a perceber que não éramos as únicas Palommers e também a entender o que buscavam na rede. 
@@ -27,7 +27,7 @@ Também conversamos na sala sobre o que gostariam de ver na rede e compartilhamo
 Os testes foram feitos na sala de aula, com o público alvo, e o feedback e ajuda foram fundamentais para que a gente pudesse realizar o projeto. 
 
 # Experimente aqui
-*[Protótipo da primeira ideia de uma versão mobile](https://marvelapp.com/b71e0hh/screen/54807683)
+*[Hospedado no Firebase](https://rede-social-palomita.firebaseapp.com/)
 
 # Como utilizar
 Basta criar o seu perfil e/ou logar e então começar a espalhar o seu amor pela nossa Diva Acessível! É possível utilizar qualquer e-mail para a criação do seu perfil ou fazer a autenticação direto pelo serviço do Google (Gmail).
