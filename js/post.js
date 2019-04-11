@@ -10,13 +10,13 @@ $(document).ready(function() {
         const childKey = childSnapshot.key;
         const childData = childSnapshot.val();
         managePost(childData.text, childKey, userInfo.name, childData.likes);
-      });    
+      });  
     });
   });
   
 
   $('#select').change(function(){
-    let feed = $(this).val();
+    let postPrivacy = $(this).val();
 
     database.ref('users/' + USER_ID).once('value')
       .then(function(snapshot) {
@@ -28,15 +28,16 @@ $(document).ready(function() {
             let childKey = childSnapshot.key;
             let childData = childSnapshot.val();
 
-            if (childData.type === feed) {
+            if (childData.type === postPrivacy) {
               managePost(childData.text, childKey, userInfo.name, childData.likes);
-            } else if (feed === 'all') {
+            } else if (postPrivacy === 'all') {
               managePost(childData.text, childKey, userInfo.name, childData.likes);
             }
           });    
         });
       });
     });
+
 
   $('.send-button').click(function(event){
     event.preventDefault();
@@ -63,20 +64,22 @@ $(document).ready(function() {
 
 
   function managePost(text, key, name, likes) {
-    $('.post-list').append(`
+    $('.palommers-feed').append(`
     <div>
-      <p class="userInfo">${name}</p>
+      <div class="d-flex justify-content-end like-btn">
+        <button data-like-id="${key}" class="btn btn-sm outline-dark"><i class="fab fa-gratipay"></i></button><p class="like-result text-center" data-like-id="${key}">${likes}</p>
+      </div>
       <div class="posts">
         <p data-text-id="${key}" class="palommers-post">${text}</p>
       </div>
+      <p class="userInfo">${name}</p>
       <div class="post-btns d-flex justify-content-end">
         <button data-edit-id="${key}" class="edit-post btn btn-sm btn-outline-dark">Editar</button>
         <button data-delete-id="${key}" class="delete-post btn btn-sm btn-outline-danger">Deletar</button>
-        <button data-like-id="${key}" class="btn btn-sm outline-dark"><i class="fab fa-gratipay"></i></button><p class="like-result text-center" data-like-id="${key}">${likes}</p>
       <div>
     </div>
     `);
-
+  
 
     $(`button[data-like-id=${key}]`).click(function(){
       let result = parseInt($(`.like-result[data-like-id="${key}"]`).text());

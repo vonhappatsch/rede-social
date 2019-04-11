@@ -15,18 +15,29 @@ Foram com muitos testes, tentativas e erros que a rede saiu em sua primeira vers
 Se você tem vergonha de declarar seu amor para a Paloma ou pedir para tirar dúvidas, a rede é para você. Gostou? Compartilha e nos envie feedback para a próxima versão! :)
 
 # Personas
-
+(incluir aqui)
 
 # Protótipo
-
+(incluir o link)
 
 # Pesquisas | Entrevistas com usuários | Testes
-
-
-# Considerações para as próximas versões
-
+Fizemos uma pesquisa com alunas de ambas as gerações através do serviço de formulário do Google, o que nos ajudou a perceber que não éramos as únicas Palommers e também a entender o que buscavam na rede. 
+(incluir fotos?)
+Também conversamos na sala sobre o que gostariam de ver na rede e compartilhamos do processo do desenvolvimento da mesma.
+Os testes foram feitos na sala de aula, com o público alvo, e o feedback e ajuda foram fundamentais para que a gente pudesse realizar o projeto. 
 
 # Experimente aqui
-
+*[Protótipo da primeira ideia de uma versão mobile](https://marvelapp.com/b71e0hh/screen/54807683)
 
 # Como utilizar
+Basta criar o seu perfil e/ou logar e então começar a espalhar o seu amor pela nossa Diva Acessível! É possível utilizar qualquer e-mail para a criação do seu perfil ou fazer a autenticação direto pelo serviço do Google (Gmail).
+
+# Considerações para as próximas versões
+[] Permitir que os Palommers se adicionem e compartilhem publicações de amigos
+[] Incluir outras reações
+[] Incluir área de mentorias
+[] Incluir área de looks
+[] Incluir área de dicas de programação
+[] Incluir área de lista de amigos
+[] Incluir área de perfis, com mais opções de informações dos usuários
+[] Permitir que os Palommers comentem em publicações
