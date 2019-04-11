@@ -45,6 +45,7 @@
         font-weight: 900;
         font-size: 3em;
         color: whitesmoke;
+        text-shadow: 3px 5px 2px #474747;
     }
 
     div.login-choice {
@@ -79,13 +80,13 @@
         font-style: bold;
     }
 
-    button.signInBtn {
+    button.btn-login {
         color: whitesmoke;
         background-color: pink;
         font-style: bold;
     }
 
-    button.loginGoogle {
+    button.btn-gg {
         color: whitesmoke;
         background-color: pink;
         font-style: bold;
