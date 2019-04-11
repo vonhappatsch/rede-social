@@ -92,11 +92,18 @@ $(document).ready(function(){
 
         let newText = $(this).html();
         $(`p[data-text-id=${key}]`).html(newText);
-        database.ref('posts/' + USER_ID + "/" + key).update({
+        if (newText) {
+          database.ref('posts/' + USER_ID + "/" + key).update({
             text: newText
           })
-        $(this).attr('contentEditable', 'false');
+          $(this).attr('contentEditable', 'false');
+        } else {
+          alert("Favor insira um conteúdo");
+          $(`p[data-text-id=${key}]`).html(text);
+        }
       })
+
+        
     });
 
     $(`button[data-delete-id=${key}]`).click(function(){
