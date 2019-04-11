@@ -86,19 +86,19 @@ $(document).ready(function(){
       database.ref('posts/' + USER_ID + "/" + key).update({
         likes: result
       })
-    })
+    });
 
-    
 
     $(`button[data-edit-id=${key}]`).click(function(){
-      let newText = prompt(`Altere seu texto: ${text}`);
+      $(`p[data-text-id=${key}]`).attr('contentEditable', 'true').focus().blur(function() {
 
-      if (newText) {
+        var newText = $(this).html();
         $(`p[data-text-id=${key}]`).html(newText);
         database.ref('posts/' + USER_ID + "/" + key).update({
-        text: newText
+            text: newText
+          })
+        $(this).attr('contentEditable', 'false');
       })
-      }
     });
 
     $(`button[data-delete-id=${key}]`).click(function(){

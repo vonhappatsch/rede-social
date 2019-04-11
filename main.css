@@ -8,7 +8,8 @@
     }
 
     div.posts {
-        width: 93vw;
+        width: 90vw;
+        margin-left: 2vw;
     }
 
     div.post-opts {
@@ -24,7 +25,7 @@
     }
     
     input.post-input {
-        width: 93vw;
+        width: 88vw;
     }
 
     div.mainbox {
@@ -60,7 +61,7 @@
     }
 
     div.post-btns {
-        width: 100%;
+        width: 98%;
         margin-bottom: 6vh;
     }
 
@@ -72,7 +73,19 @@
         margin: 0.8vh 2.9vw 0vh 0vw;
     }
 
-    button.btn {
+    button.signUpBtn {
+        color: whitesmoke;
+        background-color: pink;
+        font-style: bold;
+    }
+
+    button.signInBtn {
+        color: whitesmoke;
+        background-color: pink;
+        font-style: bold;
+    }
+
+    button.loginGoogle {
         color: whitesmoke;
         background-color: pink;
         font-style: bold;
@@ -87,6 +100,15 @@
     div.box {
         background-color: white;
         padding: 2vh 3vw 2vh 3vw;
+    }
+
+    button.signUpBtn {
+        margin-left: 0vw;
+    }
+
+    p.navbar-brand {
+        font-size: 1.2em;
+        margin-top: 0.5vh;
     }
 
 }
@@ -132,6 +154,7 @@
 
 .title-signup {
     font-size: 1.5em;
+    text-shadow: 3px 5px 2px #474747;
 }
 
 .input-group {
@@ -160,6 +183,10 @@
 
 .input-group-addon {
     margin-right: 0.8vw;
+}
+
+.control-label {
+    text-shadow: 3px 5px 2px #474747;
 }
 
 .form-group {
@@ -266,6 +293,11 @@
     font-weight: 700;
 }
 
+.navbar-brand {
+    font-size: 1.5em;
+    margin-top: 0.8vh;
+}
+
 .like-result {
     font-size: 1em;
     margin: 0.8vh 0.8vw 0vh 0vw;
@@ -284,4 +316,8 @@
 .box {
     background-color: white;
     padding: 2vh 2vw 2vh 2vw;
+}
+
+#signUpBtn {
+    margin-left: 1vw;
 }
