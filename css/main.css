@@ -33,7 +33,7 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        background: url(Palomita.jpg) no-repeat 50% fixed / cover;
+        background: url(/pics/Palomita.jpg) no-repeat 50% fixed / cover;
     }
 
     div.login-form {
@@ -94,7 +94,7 @@
 
     div.signup {
         width: 100%;
-        background-image: url("Palomita.jpg");
+        background-image: url(/pics/Palomita.jpg);
         background-size: cover;
     }
 
@@ -270,7 +270,7 @@
 }
 
 .signup {
-    background-image: url(Palomita.jpg);
+    background-image: url(/pics/Palomita.jpg);
     background-size: cover;
     color: whitesmoke;
 }
