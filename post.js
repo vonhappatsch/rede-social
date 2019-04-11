@@ -12,7 +12,8 @@ $(document).ready(function(){
         managePost(childData.text, childKey, userInfo.name, childData.likes);
       });    
     });
-  })
+  });
+  
 
   $("#select").change(function(){
     const feed = $(this).val();
@@ -64,7 +65,7 @@ $(document).ready(function(){
  
     $(".post-list").append(`
     <div>
-      <p class="userInfo">${name}</p> 
+      <p class="userInfo">${name}</p>
       <div class="posts">
         <p data-text-id="${key}" class="palommers-post">${text}</p>
       </div>
