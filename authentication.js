@@ -67,7 +67,7 @@ $(document).ready(function() {
     })
 
 
-    auth.onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in
           name = user.name;
@@ -84,10 +84,10 @@ $(document).ready(function() {
     });
 
 
-  $('#logoutBtn').click(function() {
+  $('#logoutBtn').click(function(){
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
-      window.location = "index.html";
+      window.location = 'index.html';
     }).catch(function(error) {
       // An error happened.
       let errorCode = error.code;
