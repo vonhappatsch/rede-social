@@ -33,11 +33,11 @@ Os testes foram feitos na sala de aula, com o público alvo, e o feedback e ajud
 Basta criar o seu perfil e/ou logar e então começar a espalhar o seu amor pela nossa Diva Acessível! É possível utilizar qualquer e-mail para a criação do seu perfil ou fazer a autenticação direto pelo serviço do Google (Gmail).
 
 # Considerações para as próximas versões
-[] Permitir que os Palommers se adicionem e compartilhem publicações de amigos
-[] Incluir outras reações
-[] Incluir área de mentorias
-[] Incluir área de looks
-[] Incluir área de dicas de programação
-[] Incluir área de lista de amigos
-[] Incluir área de perfis, com mais opções de informações dos usuários
-[] Permitir que os Palommers comentem em publicações
+* [ ] Permitir que os Palommers se adicionem e compartilhem publicações de amigos
+* [ ]  Incluir outras reações
+* [ ] Incluir área de mentorias
+* [ ] Incluir área de looks
+* [ ] Incluir área de dicas de programação
+* [ ] Incluir área de lista de amigos
+* [ ] Incluir área de perfis, com mais opções de informações dos usuários
+* [ ] Permitir que os Palommers comentem em publicações
