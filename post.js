@@ -99,7 +99,7 @@ $(document).ready(function(){
           })
           $(this).attr('contentEditable', 'false');
         } else {
-          alert("Favor insira um conteúdo");
+          alert("Insira um conteúdo");
           $(`p[data-text-id=${key}]`).html(text);
         }
       })
@@ -117,7 +117,7 @@ $(document).ready(function(){
     });
   };
 
-
+  
 
 });
 
