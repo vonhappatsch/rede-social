@@ -13,3 +13,20 @@ As principais funcionalidades dessa primeira versão é poder postar, editar e d
 Foram com muitos testes, tentativas e erros que a rede saiu em sua primeira versão e deu para perceber o que daria para ser entregue dentro do tempo e o que não seria, assim como adaptações e afins. Para conferir, só mexendo mesmo a fim de ver se a ponte continua de pé.
 
 Se você tem vergonha de declarar seu amor para a Paloma ou pedir para tirar dúvidas, a rede é para você. Gostou? Compartilha e nos envie feedback para a próxima versão! :)
+
+# Personas
+
+
+# Protótipo
+
+
+# Pesquisas | Entrevistas com usuários | Testes
+
+
+# Considerações para as próximas versões
+
+
+# Experimente aqui
+
+
+# Como utilizar
