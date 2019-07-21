@@ -33,15 +33,4 @@ $(document).ready(function() {
     <div>`);
   }
 
-  
-  function deletePost() {
-
-  }
-
-  
-  function editPost() {
-    
-  }
-
-
 });
